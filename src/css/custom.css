@@ -1,0 +1,167 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Deep navy / black base */
+  --base-bg: #050b19;
+  --accent-cyan: #00e6ff; /* electric cyan */
+  --accent-teal: #00b3b3; /* teal */
+  --accent-blue: #1fb6ff; /* electric blue */
+  --glass-alpha: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --muted: rgba(200,215,230,0.6);
+  --card-bg: rgba(10,18,30,0.5);
+  --transition-fast: 180ms;
+  --transition-medium: 250ms;
+  --shadow-strong: 0 20px 50px rgba(2,12,27,0.6);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --ifm-code-font-size: 95%;
+}
+
+/* Dark theme overrides (Docusaurus uses data-theme) */
+[data-theme='dark'] {
+  background: var(--base-bg);
+  color-scheme: dark;
+}
+
+html, body, #__docusaurus, #__docusaurus .theme-root {
+  background-color: var(--base-bg) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light theme body overrides */
+html[data-theme='light'] body,
+html[data-theme='light'] #__docusaurus,
+html[data-theme='light'] #__docusaurus .theme-root {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* Utility helpers used by the new homepage styles */
+.futura-headline {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  letter-spacing: -0.5px;
+}
+
+.glow-text {
+  text-shadow: 0 8px 30px rgba(0,230,255,0.12), 0 2px 6px rgba(0,190,255,0.06);
+}
+
+/* Smooth animation defaults */
+.smooth-transition {
+  transition: all var(--transition-medium) cubic-bezier(.2,.9,.2,1);
+}
+
+/* Light theme variables */
+html[data-theme='light'] {
+  --base-bg: #ffffff;
+  --accent-cyan: #0891b2;
+  --accent-teal: #0ea5a4;
+  --accent-blue: #0369a1;
+  --glass-alpha: rgba(255,255,255,0.9);
+  --glass-border: rgba(2,6,23,0.12);
+  --muted: rgba(30,41,59,0.9);
+  --card-bg: rgba(255,255,255,0.95);
+  --shadow-strong: 0 12px 30px rgba(2,6,23,0.15);
+  
+  /* Override Docusaurus light theme colors */
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #1e293b;
+  --ifm-heading-color: #0f172a;
+  --ifm-link-color: #0891b2;
+  --ifm-link-hover-color: #0ea5a4;
+  --ifm-navbar-background-color: rgba(255,255,255,0.95);
+  --ifm-navbar-shadow: 0 2px 20px rgba(2,6,23,0.08);
+  --ifm-footer-background-color: #f8fafc;
+  --ifm-footer-color: #64748b;
+}
+
+/* Global theme transition */
+html {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Particle helper (used by hero) */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(18px);
+  transform: translate3d(0,0,0);
+  animation: floaty 12s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6%) scale(1.12); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Theme Toggle basic placement if used as fixed */
+.themeToggleFixed {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1200;
+}
+
+/* Backdrop blur utility */
+.backdrop-blur {
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* Light mode specific improvements */
+html[data-theme='light'] {
+  /* Better text contrast */
+  --ifm-color-content: #1e293b;
+  --ifm-color-content-secondary: #475569;
+  
+  /* Card and surface colors */
+  --ifm-card-background-color: rgba(255,255,255,0.95);
+  --ifm-card-border-radius: 12px;
+  
+  /* Button improvements */
+  --ifm-button-background-color: #0891b2;
+  --ifm-button-border-color: #0891b2;
+  
+  /* Code block improvements */
+  --ifm-code-background: #f1f5f9;
+  --ifm-code-color: #334155;
+  
+  /* Navbar improvements */
+  --ifm-navbar-item-padding-horizontal: 16px;
+  --ifm-navbar-item-padding-vertical: 8px;
+}
+
+/* Light mode glow text adjustment */
+html[data-theme='light'] .glow-text {
+  text-shadow: 0 2px 8px rgba(8,145,178,0.15), 0 1px 3px rgba(8,145,178,0.1);
+}
+
+/* Light mode particles */
+html[data-theme='light'] .particle {
+  opacity: 0.06;
+  filter: blur(12px);
+}
+
+/* Light mode smooth transitions */
+html[data-theme='light'] .smooth-transition {
+  transition: all var(--transition-medium) cubic-bezier(.2,.9,.2,1);
+}

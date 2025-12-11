@@ -1,0 +1,238 @@
+:root {
+  /* Dark theme colors */
+  --ifm-color-primary: #0d1a2e;
+  --ifm-color-primary-dark: #0b1626;
+  --ifm-color-primary-darker: #0a1423;
+  --ifm-color-primary-darkest: #08101c;
+  --ifm-color-primary-light: #0f1e36;
+  --ifm-color-primary-lighter: #10213a;
+  --ifm-color-primary-lightest: #132845;
+  --ifm-background-color: #0d1a2e;
+  --ifm-font-color-base: #ffffff;
+  --ifm-hero-text-color: #ffffff;
+  --ifm-heading-color: #ffffff;
+  --ifm-link-color: #00ffff;
+  --ifm-link-hover-color: #00e6e6;
+
+  --custom-cyan: #00ffff;
+  --custom-slate-grey: #8892b0;
+  --custom-deep-blue: #0d1a2e;
+  --custom-card-bg: #112240;
+}
+
+/* Light theme overrides */
+html[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #1e293b;
+  --ifm-hero-text-color: #0f172a;
+  --ifm-heading-color: #0f172a;
+  --ifm-link-color: #0891b2;
+  --ifm-link-hover-color: #0ea5a4;
+  
+  --custom-cyan: #0891b2;
+  --custom-slate-grey: #64748b;
+  --custom-deep-blue: #ffffff;
+  --custom-card-bg: rgba(255,255,255,0.95);
+}
+
+.heroBanner {
+  padding: 6.5rem 0 8rem;
+  position: relative;
+  overflow: hidden;
+  color: #e6fbff;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+}
+
+/* Light mode hero */
+html[data-theme='light'] .heroBanner {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1e293b;
+}
+
+.heroTitle {
+  font-size: 3.75rem;
+  font-weight: 900;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  color: white;
+  letter-spacing: -0.8px;
+}
+
+/* Light mode hero title */
+html[data-theme='light'] .heroTitle {
+  color: #0f172a;
+  text-shadow: none;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 900px;
+  margin: 0 0 1.75rem;
+}
+
+/* Light mode hero subtitle */
+html[data-theme='light'] .heroSubtitle {
+  color: #64748b;
+}
+
+.heroButton {
+  --btn-h: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-h);
+  padding: 0 26px;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(31,182,255,0.98), rgba(0,230,255,0.92));
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 6px 30px rgba(3,28,46,0.45);
+  transform-origin: center;
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+}
+
+.heroButton:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 60px rgba(0,230,255,0.14), 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.features {
+  padding: 4.25rem 0;
+}
+
+.featureCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 2rem;
+  box-shadow: 0 6px 26px rgba(2,12,27,0.5);
+  transition: transform 0.25s var(--transition-medium), box-shadow 0.25s ease;
+}
+
+/* Light mode feature cards */
+html[data-theme='light'] .featureCard {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(2,6,23,0.08);
+  box-shadow: 0 6px 26px rgba(2,6,23,0.08);
+  color: #1e293b;
+}
+
+html[data-theme='light'] .featureCard:hover {
+  box-shadow: 0 18px 60px rgba(2,6,23,0.12);
+}
+
+.featureCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 60px rgba(3,30,45,0.65);
+}
+
+.featureCardHeader h3 {
+  color: var(--custom-cyan);
+  margin-bottom: 1rem;
+}
+
+/* Light mode feature card headers */
+html[data-theme='light'] .featureCardHeader h3 {
+  color: #0891b2;
+}
+
+.modules {
+  padding: 4rem 0 5rem;
+}
+
+.modulesTitle {
+  color: #e9fbff;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+}
+
+/* Light mode modules title */
+html[data-theme='light'] .modulesTitle {
+  color: #0f172a;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.moduleCard {
+  display: block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  height: 100%;
+  text-align: left;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 30px rgba(2,12,27,0.55);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, filter 220ms ease;
+  transform-origin: center bottom;
+}
+
+/* Light mode module cards */
+html[data-theme='light'] .moduleCard {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(2,6,23,0.08);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+  color: #64748b;
+}
+
+html[data-theme='light'] .moduleCard:hover {
+  box-shadow: 0 28px 80px rgba(2,6,23,0.12), 0 0 18px rgba(8,145,178,0.1);
+  outline: 2px solid rgba(8,145,178,0.1);
+}
+
+.moduleCard:hover {
+  transform: translateY(-10px) rotateZ(3deg);
+  box-shadow: 0 28px 80px rgba(3,30,45,0.7), 0 0 18px rgba(0,230,255,0.06);
+  outline: 2px solid rgba(31,182,255,0.06);
+}
+
+.moduleCard h4 { margin: 0 0 6px; color: white; font-weight:700; }
+.moduleCard p { margin: 0; color: var(--muted); }
+
+/* Light mode module card text */
+html[data-theme='light'] .moduleCard h4 { 
+  color: #0f172a; 
+}
+html[data-theme='light'] .moduleCard p { 
+  color: #64748b; 
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroBackground .bg-wave {
+  position: absolute;
+  left: -20%;
+  top: -10%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(ellipse at 10% 10%, rgba(0,230,255,0.06), transparent 12%), radial-gradient(ellipse at 90% 80%, rgba(31,182,255,0.04), transparent 18%);
+  filter: blur(60px) saturate(120%);
+  animation: bgFloat 14s ease-in-out infinite;
+}
+
+/* Light mode background wave */
+html[data-theme='light'] .heroBackground .bg-wave {
+  background: radial-gradient(ellipse at 10% 10%, rgba(8,145,178,0.08), transparent 15%), 
+              radial-gradient(ellipse at 90% 80%, rgba(14,165,164,0.06), transparent 20%);
+}
+
+@keyframes bgFloat {
+  0% { transform: translate3d(0,0,0) rotate(0deg); }
+  50% { transform: translate3d(3%,2%,0) rotate(1deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
