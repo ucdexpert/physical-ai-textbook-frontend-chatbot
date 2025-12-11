@@ -21,8 +21,9 @@ app = FastAPI(title="Physical AI RAG API", lifespan=lifespan)
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:3001",
+    "http://localhost:8000",
     "http://127.0.0.1:3001",
+    "https://physical-ai-textbook-frontend-raz-c.vercel.app/",
 ]
 
 app.add_middleware(
@@ -38,6 +39,11 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
+
+@app.get("/")
+async def main():
+    return {"message": "wellcome to chatbot api"}
+
 
 @app.get("/health")
 async def health_check():
