@@ -26,9 +26,19 @@ origins = [
     "https://physical-ai-textbook-frontend-raz-c.vercel.app",
 ]
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["https://physical-ai-textbook-frontend-raz-c.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
